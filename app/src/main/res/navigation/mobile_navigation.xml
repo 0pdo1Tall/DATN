@@ -12,14 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_quiz"
+        android:name="com.example.basebottom.ui.quiz.QuizFragment"
+        android:label="@string/title_quiz"
+        tools:layout="@layout/fragment_quiz" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.basebottom.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_note"
+        android:name="com.example.basebottom.ui.note.NoteFragment"
+        android:label="@string/title_note"
+        tools:layout="@layout/fragment_note" />
+
+    <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.basebottom.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.basebottom.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>
