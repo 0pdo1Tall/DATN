@@ -1,14 +1,21 @@
 package com.example.basebottom.ui.home;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,6 +37,9 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
     private List<Movie> movieList;
+
+    //
+    Dialog myDialog;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -55,19 +65,18 @@ public class HomeFragment extends Fragment {
             @Override
             public void onItemClick(Movie data) {
                 Toast.makeText(getContext(), data.getTitle(), Toast.LENGTH_SHORT).show();
+                //
+                View v = (View)getLayoutInflater().inflate(R.layout.fragment_home_popup, null);
+                showPopup(v);
             }
         });
 
         recyclerView.setAdapter(recyclerViewAdapter);
 
+        //
+        myDialog = new Dialog(getContext());
 
         return root;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
     }
 
     private void prepareMovie(){
@@ -96,4 +105,34 @@ public class HomeFragment extends Fragment {
         movie = new Movie("Thor: Ragnarok",R.drawable.thor_ragnarok);
         movieList.add(movie);
     }
+
+    public void showPopup(View v){
+        TextView txtClose;
+        Button btnFollow;
+        myDialog.setContentView(R.layout.fragment_home_popup);
+        txtClose = myDialog.findViewById(R.id.txtClose);
+        btnFollow = myDialog.findViewById(R.id.btn_follow);
+        txtClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+        btnFollow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Added to Favorites", Toast.LENGTH_SHORT).show();
+            }
+        });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
+
 }
