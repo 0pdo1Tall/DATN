@@ -7,4 +7,5 @@
     <string name="title_search">Search</string>
     <string name="title_setting">Setting</string>
     <string name="title_home_popup">Home Popup</string>
+    <string name="title_note_detail">Note Detail</string>
 </resources>

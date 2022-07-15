@@ -10,10 +10,14 @@ public class NoteViewModel extends ViewModel {
 
     public NoteViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is note fragment");
+        mText.setValue("This is note or note detail fragment");
     }
 
+    public void setText(String text) {
+        mText.setValue(text);
+    }
     public LiveData<String> getText() {
         return mText;
     }
+
 }
