@@ -44,4 +44,40 @@
         android:name="com.example.basebottom.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.basebottom.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="com.example.basebottom.ui.favorite.FavoriteFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/nav_mylist"
+        android:name="com.example.basebottom.ui.mylist.MylistFragment"
+        android:label="@string/title_mylist"
+        tools:layout="@layout/fragment_mylist" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.example.basebottom.ui.setting.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.example.basebottom.ui.help.HelpFragment"
+        android:label="@string/title_help"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.basebottom.ui.logout.LogoutFragment"
+        android:label="@string/title_logout"
+        tools:layout="@layout/fragment_logout" />
 </navigation>

@@ -8,4 +8,11 @@
     <string name="title_setting">Setting</string>
     <string name="title_home_popup">Home Popup</string>
     <string name="title_note_detail">Note Detail</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_mylist">My List</string>
+    <string name="title_help">Help</string>
+    <string name="title_logout">Logout</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
 </resources>
