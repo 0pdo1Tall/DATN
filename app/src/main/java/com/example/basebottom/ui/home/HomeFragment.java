@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ import com.example.basebottom.R;
 import com.example.basebottom.RecyclerViewAdapter;
 import com.example.basebottom.databinding.FragmentHomeBinding;
 import com.example.basebottom.model.Movie;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +77,10 @@ public class HomeFragment extends Fragment {
 
         //
         myDialog = new Dialog(getContext());
+
+        // Firebase testing
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Log.d(HomeFragment.class.toString(), "db instance: " + db.toString());
 
         return root;
     }

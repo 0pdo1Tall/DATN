@@ -31,7 +31,7 @@ public class MylistFragment extends Fragment {
     ArrayList<String> mylist;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+                             ViewGroup container, Bundle savedInstanceState) {  
         MylistViewModel mylistViewModel =
                 new ViewModelProvider(this).get(MylistViewModel.class);
 
